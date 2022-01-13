@@ -127,15 +127,14 @@ class Producer {
 
 // test case 
 describe('province', function() {
-    // shortfall
+    let asia;
+    beforeEach(function () {
+        asia = new Province(sampleProvinceData());
+    })
     it('shortfall', function() {
-        const asia = new Province(sampleProvinceData());
         expect(asia.shortFall).equal(5);
     });
-
-    // profit
     it('profit', function() {
-        const asia = new Province(sampleProvinceData());
         expect(asia.profit).equal(230);
     })
 });
