@@ -1,15 +1,5 @@
 var assert = require('assert');
 
-doc = {
-    name: "test",
-    demand: "10",
-    price: "10,000",
-    producers: [
-        "david",
-        "kim",
-    ]
-}
-
 class Province {
     constructor(doc) {
         this._name = doc.name
@@ -60,7 +50,9 @@ class Province {
 
     get shortFall() {
         console.log("shortfall");
-        return this._demand - this.totalProduction;
+        console.log("demand :", this._demand);
+        console.log("totalProduction : ", this.totalProduction);
+        return this._demand - this.totalProduction * 2;
     }
 
     get profit() {
@@ -135,7 +127,7 @@ class Producer {
 }
 
 
-
+// test case 
 describe('province', function() {
     it('shortfall', function() {
         const asia = new Province(sampleProvinceData());
