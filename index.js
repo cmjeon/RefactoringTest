@@ -1,5 +1,6 @@
 var assert = require('assert');
-
+var chai = require('chai');
+var expect = chai.expect;
 class Province {
     constructor(doc) {
         this._name = doc.name
@@ -49,10 +50,7 @@ class Province {
     }
 
     get shortFall() {
-        console.log("shortfall");
-        console.log("demand :", this._demand);
-        console.log("totalProduction : ", this.totalProduction);
-        return this._demand - this.totalProduction * 2;
+        return this._demand - this.totalProduction;
     }
 
     get profit() {
@@ -129,8 +127,17 @@ class Producer {
 
 // test case 
 describe('province', function() {
+    // shortfall
     it('shortfall', function() {
         const asia = new Province(sampleProvinceData());
-        assert.equal(asia.shortFall, 5);
+        expect(asia.shortFall).equal(5);
     });
+
+    // profit
+    it('profit', function() {
+        const asia = new Province(sampleProvinceData());
+        expect(asia.profit).equal(230);
+    })
 });
+
+
