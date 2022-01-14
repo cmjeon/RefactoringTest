@@ -142,6 +142,52 @@ describe('province', function() {
         expect(asia.shortFall).equal(-6);
         expect(asia.profit).equal(292);
     })
+    it('zero demand', function() {
+        asia.demand = 0;
+        expect(asia.shortFall).equal(-25);
+        expect(asia.profit).equal(0);
+
+    })
+    it('negative demand', function() {
+        asia.demand = -1;
+        expect(asia.shortFall).equal(-26)
+        expect(asia.profit).equal(-10)
+    })
+    it('empty string demand', function() {
+        asia.demand = "";
+        expect(asia.shortFall).NaN
+        expect(asia.profit).NaN
+    })
 });
 
+describe('no producers', function() {
+    let noProducers;
+    beforeEach(function() {
+        const data = {
+            name: "No producers",
+            producers: [],
+            demand: 30,
+            price: 20
+        };
+        noProducers = new Province(data);
+    });
+    it('shortfall', function() {
+        expect(noProducers.shortFall).equal(30);
+    });
+    it('profit', function() {
+        expect(noProducers.profit).equal(0);
+    });
+})
 
+describe('string for producers', function() {
+    it('', function() {
+        const data = {
+            name: "String producers",
+            producers: "",
+            demand: 30,
+            price: 20
+        };
+        const prov = new Province(data);
+        expect(prov.shortFall).equal(0);
+    });
+})
