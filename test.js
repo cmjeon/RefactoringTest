@@ -1,7 +1,7 @@
-import assert from 'assert';
 import chai from 'chai';
+import assert from 'assert';
 var expect = chai.expect;
-import { Province, sampleProvinceData } from "./index";
+import { Province, sampleProvinceData } from './index.js'
 
 
 describe('province', function () {
