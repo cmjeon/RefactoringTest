@@ -5,13 +5,12 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --require esm --recursive 'test.js' -w"
+    "test": "mocha test.js"
   },
   "dependencies": {
     "chai": "^4.3.4"
   },
   "devDependencies": {
-    "esm": "*",
     "mocha": "9.0.2"
   }
 }
