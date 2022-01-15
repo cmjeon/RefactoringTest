@@ -1,10 +1,11 @@
 {
   "name": "RefactoringTest",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "mocha index.js -w"
+    "test": "mocha test.js -w"
   },
   "dependencies": {
     "chai": "^4.3.4"
