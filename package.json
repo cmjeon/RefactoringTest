@@ -1,5 +1,15 @@
 {
+  "name": "RefactoringTest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha index.js -w"
+  },
   "dependencies": {
     "chai": "^4.3.4"
+  },
+  "devDependencies": {
+    "mocha": "9.0.2"
   }
 }
