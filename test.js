@@ -1,7 +1,8 @@
-var assert = require('assert');
-var chai = require('chai');
+import assert from 'assert';
+import chai from 'chai';
 var expect = chai.expect;
-var { Province, sampleProvinceData } = require('./index');
+import { Province, sampleProvinceData } from "./index";
+
 
 describe('province', function () {
   it('shortfall', function () {
